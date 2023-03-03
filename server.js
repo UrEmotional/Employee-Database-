@@ -354,7 +354,7 @@ database.query(employeeQuery, (err, res) => {
         ])
         .then((answer) => {
           const query = `UPDATE employee SET role_id = ${answer.role} WHERE id = ${answer.employee}`;
-          connection.query(query, (err, res) => {
+          database.query(query, (err, res) => {
             if (err) throw err;
             console.log('Employee role updated.');
            
